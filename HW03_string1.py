@@ -26,8 +26,14 @@
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
     # +++your code here+++
+    count = count 
+    if count > 10 or count == 10:
+        print("Number of donuts: many")
+        print()
+    else:
+        print("Number of donuts:", " ", count)
+        print()
     return
-
 
 # B. both_ends
 # Given a string s, return a string made of the first 2
@@ -36,7 +42,18 @@ def donuts(count):
 # is less than 2, return instead the empty string.
 def both_ends(s):
     # +++your code here+++
-    return
+    #This is a Slicing problem where we are slicing the given string
+    length_of_the_string = len(s)
+    if length_of_the_string < 2:
+        empty_string = " "
+        return empty_string
+
+    part1 = s[0:1]
+    #This is part one of the string which is the same irrespective of the length of the string
+    part2 = s[(length_of_the_string)-1:length_of_the_string]
+    new_word = part1 + part2
+    print (new_word)
+    return new_word
 
 
 # C. fix_start
@@ -50,7 +67,12 @@ def both_ends(s):
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
     # +++your code here+++
-    return
+    first_char = s[0]
+    final_word = s[1:].replace(first_char, "*")
+    #THis is the main file which needs to be edited -->final_word[0] = first_char. First character of the final word needs to be changed from * to the original character.
+    final_word2 = first_char + final_word
+
+    return final_word2
 
 
 # D. MixUp
@@ -62,7 +84,22 @@ def fix_start(s):
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
     # +++your code here+++
-    return
+    #Let x and y be the frst two characters of each string which is input as a part of this function. 
+    length_of_a = len(a)
+    length_of_b = len(b)
+
+    x = a[0] + a[1]
+    y = b[0] + b[1]
+    #Assignment operators for x and y. 
+    a_remain=a[2:length_of_a ]
+    b_remain=b[2:length_of_b ]
+
+    new_word4 = y + a_remain
+    new_word5 = x + b_remain
+    new_word6 =new_word4+" "+new_word5
+
+    return new_word6
+
 
 
 # Provided simple test() function used in main() to print
